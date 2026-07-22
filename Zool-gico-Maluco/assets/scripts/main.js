@@ -14,6 +14,19 @@ console.log("Como funciona?");
 console.log(
   "Voce vai poder escolher em qual camera voce vai querer olhar, onde cada camera segue essa ordem",
 );
+
+const turnoNoturno = [
+  "22:00",
+  "23:00",
+  "00:00",
+  "01:00",
+  "02:00",
+  "03:00",
+  "04:00",
+  "05:00",
+];
+let hora = 0;
+
 function mostrarCameras() {
   console.log(
     chalk.bold.green(
@@ -70,113 +83,124 @@ let opcoesValidas = [
 ];
 
 do {
+  console.log(chalk.bold.yellow(`\n[HORA ATUAL]: ${turnoNoturno[hora]}`));
+
   mostrarCameras();
   camera = prompt("Digite o numero da camera que voce quer olhar: ");
   if (camera === "1") {
     console.log(
       "Os leões estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "2") {
+    hora++;
+  } else if (camera === "2") {
     console.log(
       "Os elefantes estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "3") {
+    hora++;
+  } else if (camera === "3") {
     console.log(
       "Os macacos estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "4") {
+    hora++;
+  } else if (camera === "4") {
     console.log(
       "Os pinguins estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "5") {
+    hora++;
+  } else if (camera === "5") {
     console.log(
       "As girafas estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "6") {
+    hora++;
+  } else if (camera === "6") {
     console.log(
       "Os ursos estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "7") {
+    hora++;
+  } else if (camera === "7") {
     console.log(
       "Os rinocerontes estão " +
-        acoes[Math.floor(Math.randon() * acoes.length)],
+        acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "8") {
+    hora++;
+  } else if (camera === "8") {
     console.log(
       "As zebras estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "9") {
+    hora++;
+  } else if (camera === "9") {
     console.log(
-      "Os hipopótamos estão " + acoes[Math.floor(Math.randon() * acoes.length)],
+      "Os hipopótamos estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "10") {
+    hora++;
+  } else if (camera === "10") {
     console.log(
       "Os cangurus estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "11") {
+    hora++;
+  } else if (camera === "11") {
     console.log(
       "Os cachorros estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "12") {
+    hora++;
+  } else if (camera === "12") {
     console.log(
       "Os gatos estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "13") {
+    hora++;
+  } else if (camera === "13") {
     console.log(
       "Os chimpanzés estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "14") {
+    hora++;
+  } else if (camera === "14") {
     console.log(
       "Os peixes estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "15") {
+    hora++;
+  } else if (camera === "15") {
     console.log(
       "As tartarugas estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "16") {
+    hora++;
+  } else if (camera === "16") {
     console.log(
       "As serpentes estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "17") {
+    hora++;
+  } else if (camera === "17") {
     console.log(
       "Os pingíns estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "18") {
+    hora++;
+  } else if (camera === "18") {
     console.log(
       "Os tucanos estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "19") {
+    hora++;
+  } else if (camera === "19") {
     console.log(
       "Os tigres estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "20") {
+    hora++;
+  } else if (camera === "20") {
     console.log(
       "As lontras estão " + acoes[Math.floor(Math.random() * acoes.length)],
     );
-  }
-  if (camera === "0") {
+    hora++;
+  } else if (camera === "0") {
     console.log(chalk.bold.red("Voce se demitiu, tchau!"));
     break;
   } else {
     console.log(chalk.bold.red("A opção que voce selecionou não é válida"));
+    continue;
   }
-} while (!opcoesValidas.includes(camera));
+  if (hora >= turnoNoturno.length) {
+    console.log(
+      chalk.bold.white(
+        `\n06:00 - O sol nasceu! E pelo o que parece você não enloqueceu (essa é a melhor parte), agora você está pronto para trabalhar no turno de hoje!!`,
+      ),
+    );
+    break
+  }
+} while (true);
