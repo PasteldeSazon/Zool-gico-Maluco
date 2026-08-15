@@ -1,0 +1,27 @@
+.cols {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+.cols1,
+.cols2 {
+  display: flex;
+  border: 2px solid black;
+  justify-content: center;
+  align-items: flex-start;
+  height: 400px;
+  width: 400px;
+}
+
+.btns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.btns button {
+  height: 60px;
+}
