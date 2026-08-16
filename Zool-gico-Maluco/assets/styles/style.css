@@ -17,6 +17,23 @@
   height: 400px;
   width: 400px;
 }
+
+.cols1 b,
+.cols2 b {
+    display: block;
+    text-align: center;
+    font-size: 25px;
+}
+
+.cols1 b::after,
+.cols2 b::after {
+    content: "";
+    display: block;
+    width: 400px;
+    height: 2px;
+    background: black;
+    margin-top: 5px;
+}
 /* ____________________________________________________________________________ */
 .btns {
   display: grid;
@@ -29,6 +46,7 @@
   /* height: 60px; */
   font-family: 'Noto Color Emoji', sans-serif;
     font-size: 1.5rem; 
+    border-radius: 8px;
 }
 
 .CAM {
